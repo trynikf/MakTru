@@ -1,4 +1,5 @@
-MAIN=HelloWorld.cpp
+MAIN="main.cpp sorting.cpp io.cpp"
+
 APP=example
 
 g++ $MAIN -o "$APP"
@@ -8,3 +9,6 @@ g++ $MAIN -o "$APP"
 if [ -f "$APP" ]; then
     rm "$APP"
 fi
+
+
+

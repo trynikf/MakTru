@@ -1,6 +1,6 @@
 #include<iostream>
 
-void BubbleSort(int arr[], const int lenght);
+void BubbleSort(int *arr, const int lenght);
 
 int main(){
     std::cout << "Введите длину массива:\n";
