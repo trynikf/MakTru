@@ -16,11 +16,14 @@ int main(){
         std::cin >> number;
         mas[i] = number;
     }
+    
     std::cout << "Массив до сортировки:\n";
     for (int i = 0; i < len; i++){
         std::cout << mas[i] << " ";
     }
+
     BubbleSort(mas, len);
+
     std::cout << "\nМассив после сортировки:\n";
     for (int i = 0; i < len; i++){
         std::cout << mas[i] << " ";
