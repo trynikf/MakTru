@@ -1,6 +1,6 @@
 #include<iostream>
 
-void BubbleSort(int *arr, const int lenght);
+void BubbleSort(int *arr, const int length);
 
 int main(){
     std::cout << "Введите длину массива:\n";
@@ -31,10 +31,10 @@ int main(){
     return 0;
 }
 
-void BubbleSort(int *arr, const int lenght){
+void BubbleSort(int *arr, const int length){
     int elem = 1;
-    while (elem < lenght){
-        for (int i = 0; i < lenght-elem; i++){
+    while (elem < length){
+        for (int i = 0; i < length-elem; i++){
             if (arr[i] > arr[i+1]){
                 int swapper = arr[i];
                 arr[i] = arr[i+1];
