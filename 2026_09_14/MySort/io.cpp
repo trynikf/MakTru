@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void TMV::MyPrint(const char* const comment, int *arr,const char* const comment2, const int length){
+void tmv::myPrint(const char* const comment, int *arr,const char* const comment2, const int length){
     std::cout << comment << "\n";
 
     for (int i = 0;i < length; i++){

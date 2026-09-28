@@ -1,37 +1,39 @@
 #include<iostream>
 
-void BubbleSort(int *arr, const int length);
+void bubbleSort(int *arr, const int length);
 
+void printArray(int *arr, const int length){
+    for (int i = 0; i < length; i++){
+        std::cout << arr[i] << " ";
+    }
+}
 int main(){
     std::cout << "Введите длину массива:\n";
 
     int len;
     std::cin >> len;
 
-    int mas[len];
+    int *array = new int[len];
     std::cout << "Введите массив:\n";
 
     for (int i = 0; i < len; i++){
         int number;
         std::cin >> number;
-        mas[i] = number;
+        array[i] = number;
     }
     
     std::cout << "Массив до сортировки:\n";
-    for (int i = 0; i < len; i++){
-        std::cout << mas[i] << " ";
-    }
+    printArray(array, len);
 
-    BubbleSort(mas, len);
+    bubbleSort(array, len);
 
     std::cout << "\nМассив после сортировки:\n";
-    for (int i = 0; i < len; i++){
-        std::cout << mas[i] << " ";
-    }
+    printArray(array, len);
+
     return 0;
 }
 
-void BubbleSort(int *arr, const int length){
+void bubbleSort(int *arr, const int length){
     int elem = 1;
     while (elem < length){
         for (int i = 0; i < length-elem; i++){

@@ -1,6 +1,6 @@
 #include "sorting.hpp"
 
-void TMV::BubbleSort(int *arr, const int length){
+void tmv::bubbleSort(int *arr, const int length){
     int elem = 1;
     while (elem < length){
         for (int i = 0; i < length-elem; i++){

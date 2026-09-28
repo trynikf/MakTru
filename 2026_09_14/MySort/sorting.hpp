@@ -3,8 +3,8 @@
 
 
 
-namespace TMV{
-    void BubbleSort(int *arr, const int length);
+namespace tmv{
+    void bubbleSort(int *arr, const int length);
 }
 
 #endif
