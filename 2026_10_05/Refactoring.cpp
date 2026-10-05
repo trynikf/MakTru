@@ -5,8 +5,7 @@ void print_arr(const int* arr,const int length);
 int sum_arr(const int* arr,const int length);
 
 int main() {
-    int size_arr, arr_sum;
-    int count_arr;
+    int size_arr, arr_sum, count_arr;
 
     std::cout << "Введите количество массивов" << std::endl;
     std::cin >> count_arr;
