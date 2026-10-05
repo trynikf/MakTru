@@ -8,7 +8,7 @@ int main()
 {
     int size_arr;
     float arr_sum;
-    int count_arr;
+    const int count_arr;
 
     std::cout << "Введите количество массивов" << std::endl;
     std::cin >> count_arr;
