@@ -1,6 +1,7 @@
 MAIN=HelloWorld.cpp
 APP=example
 
+echo "Компиляция $MAIN..."
 g++ $MAIN -o "$APP"
 
 ./"$APP"

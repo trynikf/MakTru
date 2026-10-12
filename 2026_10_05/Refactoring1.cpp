@@ -1,24 +1,27 @@
-#include <iostream>
+#include<iostream>
+#include<stdlib.h>
 
-void fill_arr(int* arr,const int length);
-void print_arr(const int* arr,const int length);
-int sum_arr(const int* arr,const int length);
+void fill_arr(int* const arr,const int length);
+void print_arr(const int* const arr,const int length);
+int sum_arr(const int* const arr,const int length);
 
 int main() {
-    int size_arr, arr_sum, count_arr;
+    int count_arr;
 
     std::cout << "Введите количество массивов" << std::endl;
     std::cin >> count_arr;
 
     for (int i = 0; i < count_arr; i++) {
+        int size_arr;
         std::cout 
-            << "Введите длину " 
+            << "Введите размер " 
             << i + 1
-            << " последовательности"
+            << "-го массива"
             << std::endl;
         std::cin >> size_arr;
         std::cout << i+1 << " последовательность" << std::endl;
 
+        int arr_sum;
         int *arr = new int [size_arr];
         fill_arr(arr, size_arr);
         print_arr(arr, size_arr);
@@ -28,9 +31,11 @@ int main() {
         std::cout 
             << "Среднее " 
             << i + 1 
-            <<  " последовательности = " 
+            <<  "-го массив = " 
             << double(arr_sum) / size_arr
             << std::endl;
+        
+        delete[] arr;
     }
     return 0;
 }
@@ -44,8 +49,9 @@ void fill_arr(int* arr,const int length) {
 }
 
 void print_arr(const int* arr,const int length) {
+    const char space = ' ';
     for (int i = 0; i < length; i++) {
-        std::cout << arr[i] << ' ';
+        std::cout << arr[i] << space;
     }
 }
 
