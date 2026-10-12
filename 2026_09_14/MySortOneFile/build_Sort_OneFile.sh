@@ -1,4 +1,4 @@
-MAIN=MySort.cpp
+MAIN=my_bubble_sort.cpp
 APP=example
 
 echo "Компиляция $MAIN..."

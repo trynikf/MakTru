@@ -1,12 +1,11 @@
 #include<iostream>
 
 void bubbleSort(int *arr, const int length);
+void printArray(
+    const char* const comment, 
+    int *arr, 
+    const int length);
 
-void printArray(int *arr, const int length){
-    for (int i = 0; i < length; i++){
-        std::cout << arr[i] << " ";
-    }
-}
 int main(){
     std::cout << "Введите длину массива:\n";
 
@@ -22,13 +21,11 @@ int main(){
         array[i] = number;
     }
     
-    std::cout << "Массив до сортировки:\n";
-    printArray(array, len);
+    printArray("Массив до сортировки: ", array, len);
 
     bubbleSort(array, len);
 
-    std::cout << "\nМассив после сортировки:\n";
-    printArray(array, len);
+    printArray("Массив после сортировки: ", array, len);
 
     return 0;
 }
@@ -46,4 +43,15 @@ void bubbleSort(int *arr, const int length){
         }
         elem++;
     }
+}
+
+void printArray(
+    const char* const comment, 
+    int *arr, 
+    const int length){
+    std::cout << comment << std::endl;
+    for (int i = 0; i < length; i++){
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
 }
