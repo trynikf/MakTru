@@ -1,0 +1,58 @@
+#include<iostream>
+
+void selection_sort(int *arr, const int length);
+void print_array(
+    const char* const comment, 
+    int *arr, 
+    const int length);
+
+int main(){
+    std::cout << "Введите длину массива:\n";
+
+    int len;
+    std::cin >> len;
+
+    int *array = new int[len];
+    std::cout << "Введите массив:\n";
+
+    for (int i = 0; i < len; i++){
+        int number;
+        std::cin >> number;
+        array[i] = number;
+    }
+    
+    print_array("Массив до сортировки: ", array, len);
+
+    selection_sort(array, len);
+
+    print_array("Массив после сортировки: ", array, len);
+
+    return 0;
+}
+
+void selection_sort(int *arr, const int length){
+    for (int i = 0; i < length-1; i++){
+        int index = i;
+        for (int j = i+1; j < length; j++){
+            if (arr[index] > arr[j]){
+                index = j;
+            }
+        }
+        if (index != i){
+            int temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+    }
+}
+
+void print_array(
+    const char* const comment, 
+    int *arr, 
+    const int length){
+    std::cout << comment << std::endl;
+    for (int i = 0; i < length; i++){
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
