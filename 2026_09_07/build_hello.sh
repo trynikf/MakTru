@@ -1,4 +1,4 @@
-MAIN=HelloWorld.cpp
+MAIN=hello_world.cpp
 APP=example
 
 echo "Компиляция $MAIN..."
