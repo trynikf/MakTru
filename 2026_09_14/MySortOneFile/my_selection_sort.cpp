@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdlib.h>
 
 void selection_sort(int *arr, const int length);
 void print_array(
@@ -7,18 +8,15 @@ void print_array(
     const int length);
 
 int main(){
-    std::cout << "Введите длину массива:\n";
+    std::cout << "Введите длину массива:" << std::endl;
 
     int len;
     std::cin >> len;
 
     int *array = new int[len];
-    std::cout << "Введите массив:\n";
 
     for (int i = 0; i < len; i++){
-        int number;
-        std::cin >> number;
-        array[i] = number;
+        array[i] = rand() % len;
     }
     
     print_array("Массив до сортировки: ", array, len);

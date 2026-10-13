@@ -1,9 +1,10 @@
 echo "Выберите сортировку:"
-echo "1) Bubble sort(пузырьковая сортировка)"
-echo "2) Selection sort(сортировка выбором)"
-echo "3) Insert sort(сортировка выбором)"
+echo "1) Bubble sort(пузырьковая сортировка), O(n^2)"
+echo "2) Selection sort(сортировка выбором), O(n^2)"
+echo "3) Insert sort(сортировка вставкой), O(n^2)"
+echo "4) Quick sort(быстрая сортировка), O(n*log(n))"
 
-echo "Введите номер(1, 2, 3)"
+echo "Введите номер(1, 2, 3, 4)"
 read choice
 
 case "$choice" in
@@ -15,6 +16,9 @@ case "$choice" in
         ;;
     3)
         MAIN="my_insert_sort.cpp"
+        ;;
+    4)
+        MAIN="my_quick_sort.cpp"
         ;;
     *)
         echo "Ошибка: Неверный выбор! Завершение работы."
