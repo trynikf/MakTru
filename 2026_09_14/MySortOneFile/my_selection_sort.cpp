@@ -37,7 +37,7 @@ void selection_sort(int *arr, const int length){
             }
         }
         if (index != i){
-            int temp = arr[i];
+            const int temp = arr[i];
             arr[i] = arr[index];
             arr[index] = temp;
         }

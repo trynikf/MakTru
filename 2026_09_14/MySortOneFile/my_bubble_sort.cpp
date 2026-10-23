@@ -34,7 +34,7 @@ void bubble_sort(int *arr, const int length){
         bool swapped = false;
         for (int i = 0; i < length-elem; i++){
             if (arr[i] > arr[i+1]){
-                int swapper = arr[i];
+                const int swapper = arr[i];
                 arr[i] = arr[i+1];
                 arr[i+1] = swapper;
                 swapped = true;

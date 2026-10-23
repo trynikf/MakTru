@@ -41,13 +41,13 @@ void quick_sort(
         return;
     }
     int i = left_limit, j = right_limit;
-    int pivot = arr[left_limit + (right_limit - left_limit) / 2];
+    const int pivot = arr[left_limit + (right_limit - left_limit) / 2];
     while (i <= j){
         while (arr[i] < pivot) i++;
         while (arr[j] > pivot) j--;
 
         if (i <= j){
-            int swapper = arr[i];
+            const int swapper = arr[i];
             arr[i] = arr[j];
             arr[j] = swapper;
             i++;
