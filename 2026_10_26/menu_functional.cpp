@@ -24,19 +24,16 @@ const tmv::MenuItem* tmv::exit(const MenuItem* current){
 }
 
 const tmv::MenuItem* tmv::east (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
 
 const tmv::MenuItem* tmv::altai (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
 
 const tmv::MenuItem* tmv::golden_ring_of_russia (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
@@ -47,19 +44,16 @@ const tmv::MenuItem* tmv::go_back_menu (const MenuItem* current){
 }
 
 const tmv::MenuItem* tmv::vladivostok (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
 
 const tmv::MenuItem* tmv::sahalin (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
 
 const tmv::MenuItem* tmv::habarovsk (const MenuItem* current){
-
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
