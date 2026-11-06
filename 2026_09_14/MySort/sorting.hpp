@@ -4,7 +4,7 @@
 
 
 namespace tmv{
-    void bubbleSort(int *arr, const int length);
+    void bubble_sort(int *arr, const int length);
 }
 
 #endif

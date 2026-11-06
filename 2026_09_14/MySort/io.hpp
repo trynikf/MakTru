@@ -2,7 +2,11 @@
 #define IO_HPP
 
 namespace tmv{
-    void myPrint(const char* const comment, int *arr,const char* const comment2, const int length);
+    void my_print(
+        const char* const comment,
+        const int *arr,
+        const char* const comment2,
+        const int length);
 }
 
 #endif
