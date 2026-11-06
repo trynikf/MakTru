@@ -4,7 +4,7 @@
 void selection_sort(int *arr, const int length);
 void print_array(
     const char* const comment, 
-    int *arr, 
+    const int *arr, 
     const int length);
 
 int main(){
@@ -46,7 +46,7 @@ void selection_sort(int *arr, const int length){
 
 void print_array(
     const char* const comment, 
-    int *arr, 
+    const int *arr, 
     const int length){
     std::cout << comment << std::endl;
     for (int i = 0; i < length; i++){

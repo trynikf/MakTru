@@ -3,8 +3,9 @@ echo "1) Bubble sort(пузырьковая сортировка), O(n^2)"
 echo "2) Selection sort(сортировка выбором), O(n^2)"
 echo "3) Insert sort(сортировка вставкой), O(n^2)"
 echo "4) Quick sort(быстрая сортировка), O(n*log(n))"
+echo "5) Merge sort(сортировка слиянием), O(n*log(n))"
 
-echo "Введите номер(1, 2, 3, 4)"
+echo "Введите номер(1, 2, 3, 4, 5)"
 read choice
 
 case "$choice" in
@@ -20,12 +21,16 @@ case "$choice" in
     4)
         MAIN="my_quick_sort.cpp"
         ;;
+    5)
+        MAIN="my_merge_sort.cpp"
+        ;;
     *)
         echo "Ошибка: Неверный выбор! Завершение работы."
         exit 1
         ;;
 
 esac
+
 APP=example
 
 if [ ! -f "$MAIN" ]; then
