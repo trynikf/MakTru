@@ -1,119 +1,83 @@
-#include<iostream>
-#include<stdlib.h>
+#include <iostream>
+#include <cstdlib>
 
-void merge(
-    int* const *arr,
-    int* const *buffer,
-    const int left,
-    const int mid,
-    const int right);
-void merge_sort(
-    int* const arr,
-    int* const buffer,
-    const int left,
-    const int right);
-void print_array(
-    const char* const comment, 
-    const int *arr, 
-    const int length);
+void merge(int* arr, int* buffer, int left, int mid, int right);
+void merge_sort(int* arr, int* buffer, int left, int right);
+void print_array(const char* comment, const int* arr, int length);
 
-int main(){
+int main() {
     std::cout << "Введите длину массива:" << std::endl;
 
     int len;
     std::cin >> len;
+    if (len <= 0) return 0;
 
-    int *array = new int[len];
-    int* const buffer = new int[len];
-    for (int i = 0; i < len; i++){
-        array[i] = rand() % len;
+    int* array = new int[len];
+    int* buffer = new int[len];
+
+    for (int i = 0; i < len; i++) {
+        array[i] = std::rand() % len;
     }
-    
-    print_array("Массив до сортировки: ", array, len);
 
-    merge_sort(array, buffer, 0, len-1);
+    print_array("Массив до сортировки:", array, len);
+
+    merge_sort(array, buffer, 0, len - 1);
+
+    print_array("Массив после сортировки:", array, len);
 
     delete[] buffer;
-
-    print_array("Массив после сортировки: ", array, len);
+    delete[] array;
 
     return 0;
 }
 
-void merge(
-    int* const arr,
-    int* const buffer,
-    const int left,
-    const int mid,
-    const int right){
-    
-    const int length_left = mid - left + 1;
-    const int length_right = right - mid;
+void merge(int* arr, int* buffer, int left, int mid, int right) {
+    int length_left = mid - left + 1;
+    int length_right = right - mid;
 
-    int* const L_ptr = buffer;
-    int* const R_ptr = buffer + length_left;
+    int* L_ptr = buffer;
+    int* R_ptr = buffer + length_left;
 
-    for (int i = 0; i < length_left; i++){
-        *(L_ptr + i) = *(arr + left + i);
+    for (int i = 0; i < length_left; i++) {
+        L_ptr[i] = arr[left + i];
     }
 
-    for (int j = 0; j < length_right; j++){
-        *(R_ptr + j) = *(arr + mid + 1 + j);
+    for (int j = 0; j < length_right; j++) {
+        R_ptr[j] = arr[mid + 1 + j];
     }
 
-    const int* const L_end = L_ptr + length_left;
-    const int* const R_end = R_ptr + length_right;
+    int i = 0, j = 0, k = left;
 
-    int* curr_L = L_ptr;
-    int* curr_R = R_ptr;
-    int* curr_arr = arr + left;
-
-    while (curr_L < L_end && curr_R < R_end) {
-        if (*curr_L <= *curr_R) {
-            *curr_arr = *curr_L;
-            ++curr_L;
+    while (i < length_left && j < length_right) {
+        if (L_ptr[i] <= R_ptr[j]) {
+            arr[k++] = L_ptr[i++];
         } else {
-            *curr_arr = *curr_R;
-            ++curr_R;
+            arr[k++] = R_ptr[j++];
         }
-        ++curr_arr;
     }
 
-    while (curr_L < L_end) {
-        *curr_arr = *curr_L;
-        ++curr_L;
-        ++curr_arr;
+    while (i < length_left) {
+        arr[k++] = L_ptr[i++];
     }
 
-    while (curr_R < R_end) {
-        *curr_arr = *curr_R;
-        ++curr_R;
-        ++curr_arr;
+    while (j < length_right) {
+        arr[k++] = R_ptr[j++];
     }
 }
 
-void merge_sort(
-    int* const arr,
-    int* const buffer,
-    const int left,
-    const int right){
-    
+void merge_sort(int* arr, int* buffer, int left, int right) {
     if (left >= right) return;
 
-    const int mid = left + (right - left) / 2;
+    int mid = left + (right - left) / 2;
 
     merge_sort(arr, buffer, left, mid);
     merge_sort(arr, buffer, mid + 1, right);
-
     merge(arr, buffer, left, mid, right);
 }
-    
-void print_array(
-    const char* const comment, 
-    const int *arr, 
-    const int length){
+
+void print_array(const char* comment, const int* arr, int length) {
     std::cout << comment << std::endl;
-    for (int i = 0; i < length; i++){
+    for (int i = 0; i < length; i++) {
         std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
