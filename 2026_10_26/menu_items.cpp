@@ -1,7 +1,5 @@
 #include"menu_items.hpp"
 
-#include<cstddef>
-
 #include"menu_functional.hpp"
 
 const tmv::MenuItem tmv::VLADIVOSTOK = {
