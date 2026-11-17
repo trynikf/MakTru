@@ -1,5 +1,5 @@
 #include<iostream>
-#include<stdlib.h>
+#include <cstdlib>
 
 void quick_sort(
     int *arr,
@@ -16,6 +16,8 @@ int main(){
     int len;
     std::cin >> len;
 
+    if (len <= 0) return 0;
+
     int *array = new int[len];
 
     for (int i = 0; i < len; i++){
@@ -29,6 +31,8 @@ int main(){
     quick_sort(array, left, right);
 
     print_array("Массив после сортировки: ", array, len);
+
+    delete[] array;
 
     return 0;
 }

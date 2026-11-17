@@ -1,4 +1,5 @@
 #include <iostream>
+#include<cstdlib>
 
 void print_array(
     const char* const comment,
@@ -26,6 +27,8 @@ int main()
         swap(array[i], array[length_arr-i-1]);
     }
     print_array("Массив после преобразования: ", array, length_arr);
+
+    delete[] array;
 
     return 0;
 }

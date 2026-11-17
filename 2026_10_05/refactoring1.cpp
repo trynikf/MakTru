@@ -1,5 +1,5 @@
 #include<iostream>
-#include<stdlib.h>
+#include<cstdlib>
 
 void fill_arr(int* const arr,const int length);
 void print_arr(const int* const arr,const int length);

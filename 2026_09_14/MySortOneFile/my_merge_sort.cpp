@@ -10,6 +10,7 @@ int main() {
 
     int len;
     std::cin >> len;
+    
     if (len <= 0) return 0;
 
     int* array = new int[len];

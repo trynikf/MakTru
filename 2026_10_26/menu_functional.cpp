@@ -13,9 +13,13 @@ const tmv::MenuItem* tmv::show_menu(const MenuItem* current){
     std::cout << "Перемещение > ";
 
     int user_write;
-    std::cin >> user_write;
-    std::cout << std::endl;
+    while (!(std::cin >> user_write) || user_write < 0 || user_write >= current->children_count) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Неверный ввод! Введите число от 0 до " << current->children_count - 1 << " > ";
+    }
 
+    std::cout << std::endl;
     return current->children[user_write];
 }
 
@@ -23,42 +27,12 @@ const tmv::MenuItem* tmv::exit(const MenuItem* current){
     std::exit(0);
 }
 
-const tmv::MenuItem* tmv::east (const MenuItem* current){
+const tmv::MenuItem* tmv::select_item(const MenuItem* current) {
     std::cout << current->title << std::endl << std::endl;
     return current->parent;
 }
 
-const tmv::MenuItem* tmv::altai (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent;
-}
-
-const tmv::MenuItem* tmv::golden_ring_of_russia (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent;
-}
-
-const tmv::MenuItem* tmv::go_back_menu (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent->parent;
-}
-
-const tmv::MenuItem* tmv::vladivostok (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent;
-}
-
-const tmv::MenuItem* tmv::sahalin (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent;
-}
-
-const tmv::MenuItem* tmv::habarovsk (const MenuItem* current){
-    std::cout << current->title << std::endl << std::endl;
-    return current->parent;
-}
-
-const tmv::MenuItem* tmv::go_back_travel (const MenuItem* current){
+const tmv::MenuItem* tmv::go_back(const MenuItem* current) {
     std::cout << current->title << std::endl << std::endl;
     return current->parent->parent;
 }

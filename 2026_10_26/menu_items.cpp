@@ -5,16 +5,16 @@
 #include"menu_functional.hpp"
 
 const tmv::MenuItem tmv::VLADIVOSTOK = {
-    "1 - Хочу в Владивосток!", tmv::vladivostok, &tmv::EAST
+    "1 - Хочу в Владивосток!", tmv::select_item, &tmv::EAST
 };
 const tmv::MenuItem tmv::SAHALIN = {
-    "2 - Хочу в Сахалин!", tmv::sahalin, &tmv::EAST
+    "2 - Хочу в Сахалин!", tmv::select_item, &tmv::EAST
 };
 const tmv::MenuItem tmv::HABAROVSK = {
-    "3 - Хочу в Хабаровск!", tmv::habarovsk, &tmv::EAST
+    "3 - Хочу в Хабаровск!", tmv::select_item, &tmv::EAST
 };
 const tmv::MenuItem tmv::GO_BACK_TRAVEL = {
-    "0 - Хочу вернуться в путешествия!", tmv::go_back_travel, &tmv::EAST
+    "0 - Хочу вернуться в путешествия!", tmv::go_back, &tmv::EAST
 };  
 
 namespace {
@@ -31,13 +31,13 @@ const tmv::MenuItem tmv::EAST = {
     "1 - Хочу переместиться на Дальний восток!", tmv::show_menu, &tmv::TRAVEL, east_children, east_size
 };
 const tmv::MenuItem tmv::ALTAI = {
-    "2 - Хочу переместиться на Алтай!", tmv::altai, &tmv::TRAVEL
+    "2 - Хочу переместиться на Алтай!", tmv::select_item, &tmv::TRAVEL
 };
 const tmv::MenuItem tmv::GOLDEN_RING_OF_RUSSIA = {
-    "3 - Хочу переместиться на Золотое Кольцо России!", tmv::golden_ring_of_russia, &tmv::TRAVEL
+    "3 - Хочу переместиться на Золотое Кольцо России!", tmv::select_item, &tmv::TRAVEL
 };
 const tmv::MenuItem tmv::GO_BACK_MENU = {
-    "0 - Хочу вернуться в меню!", tmv::go_back_menu, &tmv::TRAVEL
+    "0 - Хочу вернуться в меню!", tmv::go_back, &tmv::TRAVEL
 };  
 
 namespace {

@@ -1,5 +1,5 @@
 #include<iostream>
-#include<stdlib.h>
+#include <cstdlib>
 
 void selection_sort(int *arr, const int length);
 void print_array(
@@ -13,6 +13,8 @@ int main(){
     int len;
     std::cin >> len;
 
+    if (len <= 0) return 0;
+
     int *array = new int[len];
 
     for (int i = 0; i < len; i++){
@@ -24,6 +26,8 @@ int main(){
     selection_sort(array, len);
 
     print_array("Массив после сортировки: ", array, len);
+
+    delete[] array;
 
     return 0;
 }

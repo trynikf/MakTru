@@ -7,7 +7,7 @@ int main()
         << "Введите длину массива:" 
         << std::endl;
     std::cin >> length_arr;
-    if (length_arr == 0)
+    if (length_arr <= 0)
     {
         std::cout << "Последовательность нулевая";
     }
@@ -18,7 +18,7 @@ int main()
         for (int i = 0; i < length_arr; i++)
         {
             std::cout
-                << "Ввождение " 
+                << "Ввод " 
                 << i+1 
                 << "-го элемента массива" 
                 << std::endl;
@@ -47,6 +47,7 @@ int main()
             std::cout << "Последовательность не возрастает";
         }
         std::cout << std::endl;
+        delete[] array;
     }
     
     return 0;

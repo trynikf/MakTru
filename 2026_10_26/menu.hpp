@@ -7,8 +7,8 @@ namespace tmv{
 
         const MenuItem* parent;
 
-        const MenuItem* const *children;
-        const int children_count;
+        const MenuItem* const* children = nullptr;
+        const int children_count = 0;
     };
 }
 
